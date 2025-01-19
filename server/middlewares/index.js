@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const jwt = require('jsonwebtoken');
 
 module.exports.requestInfo = (req, res, next) => {
   console.log(chalk.green('METHOD:'), chalk.green(req.method));
@@ -24,7 +25,8 @@ module.exports.checkToken = roles => {
 
       next();
     } catch (e) {
-      return res.status(403).json({ message: 'You are not authorized' });
+      console.log(e);
+      return res.status(403).json({ message: e });
     }
   };
 };

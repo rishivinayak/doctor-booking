@@ -45,6 +45,8 @@ module.exports.login = async (req, res) => {
       }
     );
 
+    console.log(process.env.SECRET_KEY);
+
     res.status(200).json({
       message: 'You are logged in',
       token: token,

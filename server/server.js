@@ -4,7 +4,7 @@ const db = require('./db');
 const cors = require('cors');
 const routes = require('./routes');
 const { requestInfo } = require('./middlewares');
-require('dotenv').config('./env');
+require('dotenv').config('./.env');
 
 const app = express();
 
